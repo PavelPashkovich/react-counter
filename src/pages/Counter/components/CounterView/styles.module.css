@@ -1,0 +1,47 @@
+.wrapper {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 200px;
+    width: 100%;
+    border: 1px solid violet;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 1px 1px 10px cadetblue;
+}
+
+.screen {
+    margin: 0 auto 5px;
+    width: 40%;
+    padding: 10px;
+    border: 1px solid violet;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.parityType {
+    margin: 5px auto 0;
+    font-size: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+.buttons {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    border: 1px solid violet;
+    border-radius:3px;
+}
+
+.odd {
+    background-color: #f7d6ff;
+}
