@@ -13,27 +13,21 @@ class CounterContainer extends Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (this.state.countValue !== prevState.countValue) {
       const parityType = this.state.countValue % 2 !== 0 ? "odd" : "even";
-      return this.setState({ parityType: parityType });
+      this.setState({ parityType: parityType });
     }
   }
 
-  handleDecrement = () => {
-    this.setState((state) => {
-      return state.countValue && { countValue: state.countValue - 1 };
-    });
-  };
+  handleDecrement = () =>
+    this.setState(
+      (state) => state.countValue && { countValue: state.countValue - 1 }
+    );
 
-  handleReset = () => {
-    this.setState({ countValue: 0 });
-  };
+  handleReset = () => this.setState({ countValue: 0 });
 
-  handleIncrement = () => {
+  handleIncrement = () =>
     this.setState((state) => {
-      return {
-        countValue: state.countValue + 1,
-      };
+      return { countValue: state.countValue + 1 };
     });
-  };
 
   render() {
     return (
