@@ -1,21 +1,23 @@
 import React, { Component } from "react";
 
-import CounterView from "../components/CounterView";
+import CounterView from "../../../components/CounterView";
 
 class CounterContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       countValue: 0,
-      parityType: "even",
     };
+    console.log("Constructor");
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    if (this.state.countValue !== prevState.countValue) {
-      const parityType = this.state.countValue % 2 !== 0 ? "odd" : "even";
-      this.setState({ parityType: parityType });
-    }
+  componentDidMount() {
+    console.log("Component did mount");
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("Should component update");
+    return true;
   }
 
   handleDecrement = () =>
@@ -31,10 +33,10 @@ class CounterContainer extends Component {
     });
 
   render() {
+    console.log("Render");
     return (
       <CounterView
         countValue={this.state.countValue}
-        parityType={this.state.parityType}
         onDecrement={this.handleDecrement}
         onReset={this.handleReset}
         onIncrement={this.handleIncrement}

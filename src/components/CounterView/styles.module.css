@@ -1,22 +1,22 @@
 .wrapper {
-    margin: 0 auto;
+    margin: 5px auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     max-width: 200px;
     width: 100%;
-    border: 1px solid violet;
+    border: 1px solid var(--violet);
     border-radius: 5px;
     padding: 10px;
-    box-shadow: 1px 1px 10px cadetblue;
+    box-shadow: 0px 0px 2px cadetblue;
 }
 
 .screen {
     margin: 0 auto 5px;
     width: 40%;
     padding: 10px;
-    border: 1px solid violet;
+    border: 1px solid var(--violet);
     border-radius: 5px;
     text-align: center;
     font-weight: bold;
@@ -38,7 +38,7 @@
 }
 
 .button {
-    border: 1px solid violet;
+    border: 1px solid var(--violet);
     border-radius:3px;
 }
 

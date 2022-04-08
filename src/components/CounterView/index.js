@@ -1,20 +1,14 @@
 import React from "react";
+import { memo } from "react";
 import PropTypes from "prop-types";
 
 import styles from "./styles.module.css";
 
-const CounterView = ({
-  countValue,
-  parityType,
-  onDecrement,
-  onReset,
-  onIncrement,
-}) => {
+const CounterView = ({ countValue, onDecrement, onReset, onIncrement }) => {
+  const isEven = countValue % 2 === 0;
   return (
     <div className={styles.wrapper}>
-      <div
-        className={`${styles.screen} ${parityType !== "even" && styles.odd}`}
-      >
+      <div className={`${styles.screen} ${!isEven && styles.odd}`}>
         {countValue}
       </div>
       <div className={styles.buttons}>
@@ -31,7 +25,7 @@ const CounterView = ({
       <div
         className={`${styles.parityType} ${countValue === 0 && styles.hidden}`}
       >
-        Number is {parityType}
+        Number is {isEven ? "even" : "odd"}
       </div>
     </div>
   );
@@ -39,10 +33,9 @@ const CounterView = ({
 
 CounterView.propTypes = {
   countValue: PropTypes.number.isRequired,
-  parityType: PropTypes.string.isRequired,
   onDecrement: PropTypes.func.isRequired,
   onReset: PropTypes.func.isRequired,
   onIncrement: PropTypes.func.isRequired,
 };
 
-export default CounterView;
+export default memo(CounterView);
