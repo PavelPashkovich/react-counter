@@ -9,27 +9,27 @@ const CounterOfCountersContainer = (callback, deps) => {
 
   const handleAddCounter = useCallback(() => {
     setCounters((counters) => {
-      const copyCounters = [...counters];
-      copyCounters.map((counter) => {
+      const result = counters.map((counter) => {
         if (counter.countValue % 2 === 0) {
           ++counter.countValue;
         }
+        return counter;
       });
-      copyCounters.push({ id: uuid(), countValue: 0 });
-      return copyCounters;
+      result.push({ id: uuid(), countValue: 0 });
+      return result;
     });
   }, []);
 
   const handleRemoveCounter = useCallback(() => {
     setCounters((counters) => {
-      const copyCounters = [...counters];
-      copyCounters.pop();
-      copyCounters.map((counter) => {
+      const result = counters.map((counter) => {
         if (counter.countValue % 2 !== 0) {
           --counter.countValue;
         }
+        return counter;
       });
-      return copyCounters;
+      result.pop();
+      return result;
     });
   }, []);
 
@@ -50,37 +50,37 @@ const CounterOfCountersContainer = (callback, deps) => {
 
   const handleDecrement = useCallback((id) => {
     setCounters((counters) => {
-      const copyCounters = [...counters];
-      copyCounters.map((counter) => {
+      const result = counters.map((counter) => {
         if (counter.id === id) {
           counter.countValue && --counter.countValue;
         }
+        return counter;
       });
-      return copyCounters;
+      return result;
     });
   }, []);
 
   const handleReset = useCallback((id) => {
     setCounters((counters) => {
-      const copyCounters = [...counters];
-      copyCounters.map((counter) => {
+      const result = counters.map((counter) => {
         if (counter.id === id) {
           counter.countValue = 0;
         }
+        return counter;
       });
-      return copyCounters;
+      return result;
     });
   }, []);
 
   const handleIncrement = useCallback((id) => {
     setCounters((counters) => {
-      const copyCounters = [...counters];
-      copyCounters.map((counter) => {
+      const result = counters.map((counter) => {
         if (counter.id === id) {
           ++counter.countValue;
         }
+        return counter;
       });
-      return copyCounters;
+      return result;
     });
   }, []);
 
