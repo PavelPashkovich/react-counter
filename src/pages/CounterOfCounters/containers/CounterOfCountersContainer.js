@@ -10,7 +10,7 @@ const CounterOfCountersContainer = (callback, deps) => {
   const handleAddCounter = useCallback(() => {
     setCounters((counters) => {
       const copyCounters = [...counters];
-      copyCounters.forEach((counter) => {
+      copyCounters.map((counter) => {
         if (counter.countValue % 2 === 0) {
           ++counter.countValue;
         }
@@ -24,7 +24,7 @@ const CounterOfCountersContainer = (callback, deps) => {
     setCounters((counters) => {
       const copyCounters = [...counters];
       copyCounters.pop();
-      copyCounters.forEach((counter) => {
+      copyCounters.map((counter) => {
         if (counter.countValue % 2 !== 0) {
           --counter.countValue;
         }
@@ -45,17 +45,13 @@ const CounterOfCountersContainer = (callback, deps) => {
   }, []);
 
   const handleResetCounters = useCallback(() => {
-    setCounters((counters) => {
-      const copyCounters = [...counters];
-      copyCounters.splice(0, copyCounters.length);
-      return copyCounters;
-    });
+    setCounters([]);
   }, []);
 
   const handleDecrement = useCallback((id) => {
     setCounters((counters) => {
       const copyCounters = [...counters];
-      copyCounters.forEach((counter) => {
+      copyCounters.map((counter) => {
         if (counter.id === id) {
           counter.countValue && --counter.countValue;
         }
@@ -67,7 +63,7 @@ const CounterOfCountersContainer = (callback, deps) => {
   const handleReset = useCallback((id) => {
     setCounters((counters) => {
       const copyCounters = [...counters];
-      copyCounters.forEach((counter) => {
+      copyCounters.map((counter) => {
         if (counter.id === id) {
           counter.countValue = 0;
         }
@@ -79,7 +75,7 @@ const CounterOfCountersContainer = (callback, deps) => {
   const handleIncrement = useCallback((id) => {
     setCounters((counters) => {
       const copyCounters = [...counters];
-      copyCounters.forEach((counter) => {
+      copyCounters.map((counter) => {
         if (counter.id === id) {
           ++counter.countValue;
         }
@@ -87,6 +83,11 @@ const CounterOfCountersContainer = (callback, deps) => {
       return copyCounters;
     });
   }, []);
+
+  const countersSumValue = counters.reduce((sum, counter) => {
+    sum += counter.countValue;
+    return sum;
+  }, 0);
 
   return (
     <div>
@@ -100,6 +101,7 @@ const CounterOfCountersContainer = (callback, deps) => {
           handleIncrement={handleIncrement}
           handleReset={handleReset}
           handleDecrement={handleDecrement}
+          countersSumValue={countersSumValue}
         />
       </div>
     </div>

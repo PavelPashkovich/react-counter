@@ -1,4 +1,3 @@
-import React from "react";
 import { memo } from "react";
 import PropTypes from "prop-types";
 
@@ -14,11 +13,8 @@ const CountersLayout = ({
   handleDecrement,
   handleReset,
   handleIncrement,
+  countersSumValue,
 }) => {
-  const countersSumValue = counters.reduce((sum, counter) => {
-    sum += counter.countValue;
-    return sum;
-  }, 0);
   return (
     <div>
       <div className={styles.wrapper}>
