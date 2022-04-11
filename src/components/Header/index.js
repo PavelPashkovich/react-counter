@@ -8,8 +8,10 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <Link to={ROUTE_NAMES.HOME_PAGE}>Home</Link>
-      <Link to={ROUTE_NAMES.COUNTER_PAGE}>Counter</Link>
-      <Link to={ROUTE_NAMES.FUNCTIONAL_COUNTER_PAGE}>Functional Counter</Link>
+      {/*<Link to={ROUTE_NAMES.LISTS}>Lists</Link>*/}
+      {/*<Link to={ROUTE_NAMES.SIMPLE_COUNTER_PAGE}>Simple Counter</Link>*/}
+      {/*<Link to={ROUTE_NAMES.COUNTER_OF_COUNTERS_PAGE}>Counter of counters</Link>*/}
+      {/*<Link to={ROUTE_NAMES.FUNCTIONAL_COUNTER_PAGE}>Functional Counter</Link>*/}
     </div>
   );
 };

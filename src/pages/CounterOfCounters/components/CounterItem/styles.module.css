@@ -1,0 +1,61 @@
+.wrapper {
+    margin: 5px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 200px;
+    width: 100%;
+    border: 1px solid var(--violet);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 0px 2px cadetblue;
+}
+
+.deleteButtonWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.deleteButton {
+    border: hidden;
+    background-color: transparent;
+    color: grey;
+    cursor: pointer;
+}
+
+.screen {
+    margin: 0 auto 5px;
+    width: 40%;
+    padding: 10px;
+    border: 1px solid var(--violet);
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.parityType {
+    margin: 5px auto 0;
+    font-size: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+.buttons {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    border: 1px solid var(--violet);
+    border-radius:3px;
+    cursor: pointer;
+}
+
+.odd {
+    background-color: #f7d6ff;
+}

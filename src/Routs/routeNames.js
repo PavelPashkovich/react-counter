@@ -1,6 +1,8 @@
 export const ROUTE_NAMES = {
-  COUNTER_PAGE: "/counter",
   HOME_PAGE: "/",
-  FUNCTIONAL_COUNTER_PAGE: "functional-counter",
-  LISTS: "lists",
+  SIMPLE_COUNTER_PAGE: "/counter",
+  COUNTER_OF_COUNTERS_PAGE: "/counters",
+  FUNCTIONAL_COUNTER_PAGE: "/functional-counter",
+  LISTS: "/lists",
+  RENDER_PROP: "/render-prop",
 };
