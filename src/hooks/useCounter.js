@@ -12,7 +12,7 @@ const useCounter = (defaultValue = 0) => {
   }, []);
 
   const handleDecrement = useCallback(() => {
-    setCount((countValue) => countValue - 1);
+    setCount((countValue) => countValue && countValue - 1);
   }, []);
 
   return {
