@@ -2,34 +2,40 @@ import { useCallback, useState } from "react";
 
 import { v4 as uuid } from "uuid";
 
+import cloneDeep from "lodash/cloneDeep";
+
 import CountersLayout from "../components/CountersLayout";
+
+import { isEven } from "../../../utils";
 
 const CounterOfCountersContainer = (callback, deps) => {
   const [counters, setCounters] = useState([]);
 
   const handleAddCounter = useCallback(() => {
     setCounters((counters) => {
-      const result = counters.map((counter) => {
-        if (counter.countValue % 2 === 0) {
-          ++counter.countValue;
+      const copy = cloneDeep(counters);
+      copy.map((counter) => {
+        if (isEven(counter.countValue)) {
+          counter.countValue++;
         }
         return counter;
       });
-      result.push({ id: uuid(), countValue: 0 });
-      return result;
+      copy.push({ id: uuid(), countValue: 0 });
+      return copy;
     });
   }, []);
 
   const handleRemoveCounter = useCallback(() => {
     setCounters((counters) => {
-      const result = counters.map((counter) => {
-        if (counter.countValue % 2 !== 0) {
+      const copy = cloneDeep(counters);
+      copy.map((counter) => {
+        if (!isEven(counter.countValue)) {
           --counter.countValue;
         }
         return counter;
       });
-      result.pop();
-      return result;
+      copy.pop();
+      return copy;
     });
   }, []);
 
@@ -50,37 +56,37 @@ const CounterOfCountersContainer = (callback, deps) => {
 
   const handleDecrement = useCallback((id) => {
     setCounters((counters) => {
-      const result = counters.map((counter) => {
+      const copy = cloneDeep(counters);
+      return copy.map((counter) => {
         if (counter.id === id) {
           counter.countValue && --counter.countValue;
         }
         return counter;
       });
-      return result;
     });
   }, []);
 
   const handleReset = useCallback((id) => {
     setCounters((counters) => {
-      const result = counters.map((counter) => {
+      const copy = cloneDeep(counters);
+      return copy.map((counter) => {
         if (counter.id === id) {
           counter.countValue = 0;
         }
         return counter;
       });
-      return result;
     });
   }, []);
 
   const handleIncrement = useCallback((id) => {
     setCounters((counters) => {
-      const result = counters.map((counter) => {
+      const copy = cloneDeep(counters);
+      return copy.map((counter) => {
         if (counter.id === id) {
           ++counter.countValue;
         }
         return counter;
       });
-      return result;
     });
   }, []);
 
