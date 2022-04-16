@@ -5,4 +5,7 @@ export const ROUTE_NAMES = {
   FUNCTIONAL_COUNTER_PAGE: "/functional-counter",
   LISTS: "/lists",
   RENDER_PROP: "/render-prop",
+  REDUX_COUNTER_MANAGER: "/redux-counter-manager",
+  FORM: "form",
+  FORMIK: "formik",
 };

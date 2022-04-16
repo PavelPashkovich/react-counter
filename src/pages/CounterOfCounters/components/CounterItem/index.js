@@ -50,9 +50,9 @@ const CounterItem = ({
 CounterItem.propTypes = {
   id: PropTypes.string.isRequired,
   countValue: PropTypes.number.isRequired,
-  onDecrement: PropTypes.func.isRequired,
-  onReset: PropTypes.func.isRequired,
-  onIncrement: PropTypes.func.isRequired,
+  onDecrement: PropTypes.func,
+  onReset: PropTypes.func,
+  onIncrement: PropTypes.func,
   handleRemoveSpecificCounter: PropTypes.func,
 };
 

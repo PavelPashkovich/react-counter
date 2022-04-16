@@ -12,6 +12,9 @@ const Header = () => {
       {/*<Link to={ROUTE_NAMES.SIMPLE_COUNTER_PAGE}>Simple Counter</Link>*/}
       {/*<Link to={ROUTE_NAMES.COUNTER_OF_COUNTERS_PAGE}>Counter of counters</Link>*/}
       {/*<Link to={ROUTE_NAMES.FUNCTIONAL_COUNTER_PAGE}>Functional Counter</Link>*/}
+      <Link to={ROUTE_NAMES.REDUX_COUNTER_MANAGER}>ReduxCM</Link>
+      <Link to={ROUTE_NAMES.FORM}>Form</Link>
+      <Link to={ROUTE_NAMES.FORMIK}>Formik</Link>
     </div>
   );
 };
