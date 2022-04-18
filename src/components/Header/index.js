@@ -15,6 +15,7 @@ const Header = () => {
       <Link to={ROUTE_NAMES.REDUX_COUNTER_MANAGER}>ReduxCM</Link>
       <Link to={ROUTE_NAMES.FORM}>Form</Link>
       <Link to={ROUTE_NAMES.FORMIK}>Formik</Link>
+      <Link to={ROUTE_NAMES.REDUX_TODO}>Redux-todo</Link>
     </div>
   );
 };

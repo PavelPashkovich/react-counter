@@ -11,6 +11,7 @@ import FormContainer from "../pages/Forms/containers";
 import Formik from "../pages/Formik/Formik";
 
 import { ROUTE_NAMES } from "./routeNames";
+import ReduxToDo from "../pages/ReduxToDo/containers/ReduxToDoContainer";
 
 export const Router = () => {
   return (
@@ -38,6 +39,7 @@ export const Router = () => {
 
       <Route path={ROUTE_NAMES.FORM} element={<FormContainer />} />
       <Route path={ROUTE_NAMES.FORMIK} element={<Formik />} />
+      <Route path={ROUTE_NAMES.REDUX_TODO} element={<ReduxToDo />} />
     </Routes>
   );
 };

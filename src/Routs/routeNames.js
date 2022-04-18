@@ -8,4 +8,5 @@ export const ROUTE_NAMES = {
   REDUX_COUNTER_MANAGER: "/redux-counter-manager",
   FORM: "form",
   FORMIK: "formik",
+  REDUX_TODO: "redux-todo",
 };
