@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-counter/static/css/main.34a7e7c0.css",
+    "main.js": "/react-counter/static/js/main.6bf5115d.js",
+    "static/media/why-does-my-cat-get-the-crazies.webp": "/react-counter/static/media/why-does-my-cat-get-the-crazies.72f399cebece0635b09a.webp",
+    "index.html": "/react-counter/index.html",
+    "main.34a7e7c0.css.map": "/react-counter/static/css/main.34a7e7c0.css.map",
+    "main.6bf5115d.js.map": "/react-counter/static/js/main.6bf5115d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.34a7e7c0.css",
+    "static/js/main.6bf5115d.js"
+  ]
+}
