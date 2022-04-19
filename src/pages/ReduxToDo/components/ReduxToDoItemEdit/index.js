@@ -22,11 +22,16 @@ const ReduxToDoItemEdit = ({
         <input
           className={styles.input}
           type="text"
-          value={inputValue}
+          value={todoValue}
           onChange={handleToDoChange}
         />
         <div className={styles.buttonWrapper}>
-          <button className={styles.button} onClick={() => handleToDoValue({id: id, value: inputValue, mode: isEditMode})}>
+          <button
+            className={styles.button}
+            onClick={() =>
+              handleToDoValue({ id: id, value: inputValue, mode: isEditMode })
+            }
+          >
             Confirm
           </button>
           <button

@@ -11,26 +11,28 @@ const initialState = {
 const reduxToDoReducer = handleActions(
   {
     [actions.CREATE_TODO]: (initialState, action) => {
-      const newToDo = {
-        id: uuid(),
-        todoValue: action.payload,
-        isDone: false,
-        isEditMode: false,
-      };
-      return { todos: [newToDo, ...initialState.todos] };
+      if (action.payload) {
+        const newToDo = {
+          id: uuid(),
+          todoValue: action.payload,
+          isDone: false,
+          isEditMode: false,
+        };
+        return { todos: [newToDo, ...initialState.todos] };
+      }
     },
 
-      [actions.CHANGE_TODO_VALUE]: (initialState, action) => {
-          const copy = cloneDeep(initialState.todos);
-          const result = copy.map((todo) => {
-            if (todo.id === action.payload.id) {
-              todo.todoValue = action.payload.value;
-              todo.isEditMode = !action.payload.mode;
-            }
-            return todo;
-          });
-          return { todos: result };
-      },
+    [actions.CHANGE_TODO_VALUE]: (initialState, action) => {
+      const copy = cloneDeep(initialState.todos);
+      const result = copy.map((todo) => {
+        if (todo.id === action.payload.id) {
+          todo.todoValue = action.payload.value;
+          todo.isEditMode = !action.payload.mode;
+        }
+        return todo;
+      });
+      return { todos: result };
+    },
 
     [actions.TOGGLE_TODO_STATUS]: (initialState, action) => {
       const copy = cloneDeep(initialState.todos);
