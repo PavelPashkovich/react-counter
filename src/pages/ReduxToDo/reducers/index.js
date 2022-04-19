@@ -20,18 +20,23 @@ const reduxToDoReducer = handleActions(
         };
         return { todos: [newToDo, ...initialState.todos] };
       }
+      return { todos: [...initialState.todos] };
     },
 
     [actions.CHANGE_TODO_VALUE]: (initialState, action) => {
-      const copy = cloneDeep(initialState.todos);
-      const result = copy.map((todo) => {
-        if (todo.id === action.payload.id) {
-          todo.todoValue = action.payload.value;
-          todo.isEditMode = !action.payload.mode;
-        }
-        return todo;
-      });
-      return { todos: result };
+      if (action.payload.value) {
+        const copy = cloneDeep(initialState.todos);
+        const result = copy.map((todo) => {
+          if (todo.id === action.payload.id) {
+            todo.todoValue = action.payload.value;
+            todo.isEditMode = !action.payload.mode;
+          }
+          return todo;
+        });
+        return { todos: result };
+      }
+      alert("You should enter a todo!");
+      return { todos: [...initialState] };
     },
 
     [actions.TOGGLE_TODO_STATUS]: (initialState, action) => {

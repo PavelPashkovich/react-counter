@@ -10,7 +10,7 @@ const ReduxToDoItemEdit = ({
   handleToDoValue,
   handleToDoMode,
 }) => {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState(todoValue);
 
   const handleToDoChange = useCallback((event) => {
     setInputValue(event.target.value);
@@ -22,7 +22,7 @@ const ReduxToDoItemEdit = ({
         <input
           className={styles.input}
           type="text"
-          value={todoValue}
+          value={inputValue}
           onChange={handleToDoChange}
         />
         <div className={styles.buttonWrapper}>
