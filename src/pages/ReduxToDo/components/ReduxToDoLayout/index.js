@@ -8,7 +8,7 @@ import ReduxToDoItemEdit from "../ReduxToDoItemEdit";
 const ReduxToDoLayout = ({
   todos,
   handleToDoCreate,
-    handleToDoValue,
+  handleToDoValue,
   handleToDoStatus,
   handleToDoMode,
   handleToDoDelete,
@@ -19,14 +19,12 @@ const ReduxToDoLayout = ({
     setInputValue(event.target.value);
   }, []);
 
-  // const handleToDoSubmit = useCallback((event) => {
-  //   event.preventDefault();
-    // alert(event.target.value);
-  // }, [inputValue]);
+  const handleFormReset = useCallback(() => {
+    setInputValue(inputValue);
+  }, []);
 
   return (
     <Fragment>
-      {/*<form onSubmit={handleToDoSubmit}>*/}
         <div className={styles.wrapper}>
           <input
               className={styles.input}
@@ -34,12 +32,10 @@ const ReduxToDoLayout = ({
               value={inputValue}
               onChange={handleToDoChange}
           />
-          <button className={styles.button} onClick={() => handleToDoCreate(inputValue)}>
-          {/*<button className={styles.button} role="submit">*/}
+          <button className={styles.button} onClick={() => {handleToDoCreate(inputValue); handleFormReset()}}>
             Create
           </button>
         </div>
-      {/*</form>*/}
 
       <div>
         {todos.map((todo) => {

@@ -21,8 +21,6 @@ const reduxToDoReducer = handleActions(
     },
 
       [actions.CHANGE_TODO_VALUE]: (initialState, action) => {
-          console.log(action.payload);
-          // return initialState;
           const copy = cloneDeep(initialState.todos);
           const result = copy.map((todo) => {
             if (todo.id === action.payload.id) {
